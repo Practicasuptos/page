@@ -2,94 +2,136 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuervos</title>
-    <link rel="icon" href="Icon.ico">
-
-
+    <title>Comunidad Los Olivos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/887a835504.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-color: rgb(43, 42, 42);"></body>
-<font face="Old English Text MT" size="6" color="white">
-
-
-<center>
-<h1>Cuervos</h1>
-
-</font>
-
-<font face="Sitka Text" size="5" color="white">
-
-<p>Los cuervos son un genero de aves peseriformes grandes, de la familia Corvidae.
- Se atribuyen al género especies de tamaño medio-grande, que van desde los 34 cm de
- algunas pequeñas especies mexicanas hasta los 70 cm de los grandes cuervos comunes
- y cuervo de pico grueso. </p>
-<img src="C6.gif" width="300"
-</font>
-
-<font face="Old English Text MT" size="6" color="white">
-    <h1>Comportamiento</h1>
-    
-</font>      
-<P>Se han registrado innumerables imagenes de corvidos jugando. Muchos conductistas 
-    consideran que el juego es una cualidad esencial en los animalesa inteligentes. 
-    Los cuervos tienen una mutualidad con ciertos, en especial con los lobeznos. 
-    Esto se debe a su mutualismo ya que el cuervo al ser un animal alado se le hace 
-    mas facil buscar y ubicar ciertas presas, presas que ubica, señala y advierte 
-    a su aliado canino, el cual se encarga de darles caza y asi compartir la comida
-    con el ave.
-</P>
-<img src="C7.gif" width="600"
-</font>
-
-<font face="Old English Text MT" size="6" color="white">
-    <h1>Inteligencia</h1>
-</font>
-<p>
-    Se ha demostrado que los cuervos son animales sumamente astutos, siendo considerados 
-    como uno de lo animales mas inteligentes del mundo. Esto se demuestra de diversas 
-    maneras, por ejempl0o, se han avistado a estas aves llevando nueces a la autopista 
-    para que los automóviles la pisen y destruyan su cascara, ya que los cuervos son
-    incapaces de romperla por si mismos. Hay una subespecie que destaca sobre todas
-    en este apartado; los cuervos de Nueva Caledonia. Estos son capaces de usar
-    herramientas hechos por ellos mismos, alcanzando insectos que no podrían comer 
-    con su pico, algunos hasta han resuelto "puzzles" (rompecabezas) que hubieran sido 
-    imposibles para la mayoría de animales.     
-
-</p>
-    
-</font> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<footer>
-<h2>Realizado por:Leonardo Rodriguez, Oscar Guanchez y Carlos Solorzano </h2>    
-</footer>
-
-</center>
-</font>
-
-
-
-
-
-
-
-
-
-
 <body>
-    
+    <header class="encabezado">
+        <div class="logotipo">COMUNIDAD LOS OLIVOS</div>
+        <input type="checkbox" id="menu-lateral" class="menu-lateral">
+        <label for="menu-lateral" class="hamburguesa">
+            <span class="linea-hamburguesa"></span>
+        </label>
+
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#donde-estamos">Dónde Estamos</a></li>
+                <li><a href="#nuestro-aporte">Nuestro Aporte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <div class="carrousel">
+            <div class="conteCarrousel">
+                <div class="itemCarrousel" id="itemCarrousel-1">
+                    <img src="img/Los olivos 1.webp" alt="Paisaje de Los Olivos 1">
+                    <div class="itemCarrouselArrows">
+                        <a href="#itemCarrousel-3" aria-label="Anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#itemCarrousel-2" aria-label="Siguiente">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="itemCarrousel" id="itemCarrousel-2">
+                    <img src="img/Los olivos 2.webp" alt="Paisaje de Los Olivos 2">
+                    <div class="itemCarrouselArrows">
+                        <a href="#itemCarrousel-1" aria-label="Anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#itemCarrousel-3" aria-label="Siguiente">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="itemCarrousel" id="itemCarrousel-3">
+                    <img src="img/Los olivos 3.webp" alt="Paisaje de Los Olivos 3">
+                    <div class="itemCarrouselArrows">
+                        <a href="#itemCarrousel-2" aria-label="Anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#itemCarrousel-1" aria-label="Siguiente">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="conteCarrouselController">
+                <a href="#itemCarrousel-1" aria-label="Ir a imagen 1">•</a>
+                <a href="#itemCarrousel-2" aria-label="Ir a imagen 2">•</a>
+                <a href="#itemCarrousel-3" aria-label="Ir a imagen 3">•</a>
+            </div>
+        </div>
+        
+        <div class="columnas-contenido">
+            <section class="columna-izquierda" id="quienes-somos">
+                <h3>Sobre Nuestra Comunidad</h3>
+                <p>
+                    La comunidad de Los Olivos es un lugar pacífico y agradable. Nos esforzamos por construir un futuro mejor para todos nuestros residentes, promoviendo la participación y el bienestar colectivo. Aquí, cada vecino es una parte fundamental de nuestro crecimiento.
+                </p>
+                <p>
+                    Somos un conjunto de tres urbanizaciones que colaboran entre sí para lograr formar un entorno favorable para nuestros habitantes. 
+                </p>
+                
+                <img src="img/img1.jpg" alt="Personas en la comunidad de Los Olivos"> 
+                
+                <h3 id="donde-estamos">¿Dónde Estamos?</h3>
+                <p>
+                    Nos ubicamos en la Av Cancamure, Parroquia Altagracia, Municipio Sucre. 
+                </p>
+
+                <img src="img/Ubicacion.png" alt="Mapa de la ubicación de Los Olivos">
+                
+                <h3 id="nuestro-aporte">Nuestro Aporte</h3>
+                <p>
+                    Somos una comunidad que siempre está dispuesta a ayudar, tanto a personas que estén fuera como adentro. Procuramos siempre mantener el orden y la tranquilidad ante todo, sin molestar a nadie más. 
+                </p>
+                <p>
+                    También nos encargamos de recibir y distribuir las bolsas de comida entregadas por el CLAP y las bombonas de gas traídas por SucreGas.
+                </p>
+                <p>
+                    Nos enorgullece nuestra cultura, nuestras tradiciones y la calidez de nuestra gente. Los Olivos es más que un lugar; es un hogar donde las familias crecen y los sueños se hacen realidad.
+                </p>
+                <img src="img/img2.jpg" alt="Comunidad Los Olivos colaborando">
+                
+            </section>
+
+            <aside class="columna-derecha">
+                <div class="caja-informacion">
+                    <h4>Fecha Actual</h4>
+                    <p>8 de Julio de 2025</p> 
+                </div>
+                <div class="caja-informacion">
+                    <h4>Educación</h4>
+                    <p>Contamos con escuelas y programas educativos para todas las edades, fomentando el aprendizaje continuo.</p>
+                </div>
+                <div class="caja-informacion">
+                    <h4>Salud</h4>
+                    <p>Acceso a servicios de salud y campañas de bienestar para garantizar la salud de nuestros habitantes.</p>
+                </div>
+                <div class="caja-informacion">
+                    <h4>Vialidad</h4>
+                    <p>Proyectos de mejora de infraestructura vial para una mejor conectividad y seguridad.</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Síguenos en nuestras Redes Sociales:</p>
+        <div class="redes-sociales">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>Desarrollo por PugDesing COPRIG 2024</p>
+    </footer>
+
 </body>
 </html>
