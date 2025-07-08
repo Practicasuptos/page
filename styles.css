@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+    --color-primario: #4CAF50;
+    --color-secundario: #2E7D32; 
+    --color-terciario: #FFC107;
+    --color-texto-claro: #F1F8E9;
+    --color-texto-oscuro: #212121;
+    --color-borde: #A5D6A7;
+    --color-hover-primario: #8BC34A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Estilos para la página */
+body {
+    font-family: "Poppins", sans-serif; 
+    line-height: 1.6; 
+    background-color: var(--color-texto-claro); 
+    color: var(--color-texto-oscuro);
+}
+
+/* Estilos para enlaces */
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+ul {
+    list-style: none; 
+}
+
+/* Encabezado de la página */
+.encabezado {
+    background-color: var(--color-primario); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    position: sticky; 
+    top: 0;
+    width: 100%;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 30px;
+    z-index: 1000; 
+}
+
+/* Estilo del logotipo */
+.logotipo {
+    color: var(--color-texto-claro);
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Menú de navegación */
+.navegacion {
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+    background-color: var(--color-primario);
+    overflow: hidden; 
+    max-height: 0; 
+    transition: max-height .5s ease-out; 
+    top: 70px; 
+    left: 0;
+}
+
+.navegacion .menu {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    text-align: center;
+}
+
+.navegacion .menu li a {
+    padding: 20px;
+    display: block;
+    color: var(--color-texto-claro);
+    transition: background-color 0.3s ease; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.1em;
+}
+
+.navegacion .menu li:last-child a {
+    border-bottom: none; 
+}
+
+.navegacion .menu li a:hover {
+    background-color: var(--color-secundario); 
+}
+
+/* Hamburguesa */
+.hamburguesa {
+    cursor: pointer;
+    float: right;
+    padding: 15px;
+    display: block;
+}
+
+.linea-hamburguesa {
+    background: var(--color-texto-claro);
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 28px;
+}
+
+.linea-hamburguesa::before,
+.linea-hamburguesa::after {
+    background: var(--color-texto-claro);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out; 
+    width: 100%;
+}
+
+.linea-hamburguesa::before {
+    top: 7px;
+}
+
+.linea-hamburguesa::after {
+    top: -7px;
+}
+
+
+.menu-lateral {
+    display: none;
+}
+
+.menu-lateral:checked + .hamburguesa + .navegacion {
+    max-height: 100vh;
+}
+
+.menu-lateral:checked ~ .hamburguesa .linea-hamburguesa {
+    background: transparent;
+}
+
+.menu-lateral:checked ~ .hamburguesa .linea-hamburguesa::before {
+    transform: rotate(-45deg); 
+    top: 0;
+}
+
+.menu-lateral:checked ~ .hamburguesa .linea-hamburguesa::after {
+    transform: rotate(45deg); 
+    top: 0;
+}
+
+/* Estilos del Carrucel */
+.carrousel {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.conteCarrousel {
+    width: 100%;
+    height: 450px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.itemCarrousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    transition: opacity 0.8s ease-in-out;
+}
+
+#itemCarrousel-1:not(:target) {
+    opacity: 1;
+    position: relative;
+}
+
+.itemCarrousel:target {
+    opacity: 1;
+    position: relative; 
+}
+
+.itemCarrousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(80%); 
+}
+
+.itemCarrouselArrows {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 5; 
+}
+
+.itemCarrouselArrows > a {
+    background-color: rgba(0, 0, 0, 0.4); 
+    color: var(--color-texto-claro);
+    border-radius: 50%; 
+    padding: 10px 15px;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.itemCarrouselArrows > a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.conteCarrouselController {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 15px; 
+}
+
+.conteCarrouselController > a {
+    text-decoration: none;
+    font-size: 2.5em;
+    color: var(--color-borde); 
+    line-height: 0.5; 
+    transition: color 0.3s ease;
+}
+
+#itemCarrousel-1:target ~ .conteCarrouselController a[href="#itemCarrousel-1"] {
+    color: var(--color-terciario); 
+}
+
+#itemCarrousel-2:target ~ .conteCarrouselController a[href="#itemCarrousel-2"] {
+    color: var(--color-terciario);
+}
+
+#itemCarrousel-3:target ~ .conteCarrouselController a[href="#itemCarrousel-3"] {
+    color: var(--color-terciario);
+}
+
+#itemCarrousel-1:not(:target):not(#itemCarrousel-2:target):not(#itemCarrousel-3:target) ~ .conteCarrouselController a[href="#itemCarrousel-1"] {
+    color: var(--color-terciario);
+}
+
+
+/* Contenido principal bajo el carrusel */
+.contenido-principal {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto; 
+    background-color: var(--color-texto-claro); 
+    border-radius: 0; 
+}
+
+.columnas-contenido {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; 
+    margin-top: 50px;
+}
+
+.columna-izquierda,
+.columna-derecha .caja-informacion {
+    padding: 30px;
+    border: 1px solid var(--color-borde);
+    background-color: #ffffff;
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+
+.columna-izquierda {
+    flex: 2;
+    min-width: 350px; 
+}
+
+.columna-izquierda img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+.columna-izquierda h3,
+.caja-informacion h4 {
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.columna-izquierda p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.columna-derecha {
+    flex: 1; 
+    min-width: 300px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+}
+
+/* Pie de página */
+.pie-pagina {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 1em;
+}
+
+.pie-pagina .redes-sociales {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.pie-pagina .redes-sociales a {
+    color: var(--color-texto-claro);
+    font-size: 1.8em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.pie-pagina .redes-sociales a:hover {
+    color: var(--color-hover-primario); 
+}
+
+@media (max-width: 768px) {
+    .encabezado {
+        padding: 10px 15px;
+    }
+
+    .logotipo {
+        font-size: 1.5em;
+    }
+
+    .columnas-contenido {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .columna-izquierda, .columna-derecha {
+        min-width: unset; 
+        width: 100%; 
+    }
+
+    .conteCarrousel {
+        height: 300px;
+    }
+
+    .itemCarrouselArrows {
+        padding: 10px;
+    }
+
+    .itemCarrouselArrows > a {
+        padding: 8px 12px;
+        font-size: 1.2em;
+    }
+
+    .conteCarrouselController {
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .conteCarrouselController > a {
+        font-size: 2em;
+    }
+
+    .columna-izquierda h3,
+    .caja-informacion h4 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .columna-izquierda p {
+        font-size: 1em;
+    }
+
+    .columna-derecha {
+        gap: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburguesa,
+    .menu-lateral {
+        display: none;
+    }
+
+
+    .navegacion {
+        max-height: none;
+        position: relative; 
+        width: auto;
+        background-color: transparent; 
+        top: auto;
+        left: auto;
+    }
+
+    .navegacion .menu {
+        flex-direction: row;
+        width: auto;
+        text-align: left;
+    }
+
+    .navegacion .menu li a {
+        padding: 10px 20px;
+        color: var(--color-texto-claro);
+        border-bottom: none; 
+        font-size: 1em;
+    }
+
+    .navegacion .menu li a:hover {
+        background-color: transparent; 
+        color: var(--color-hover-primario);
+    }
+}
